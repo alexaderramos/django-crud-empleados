@@ -1,0 +1,49 @@
+
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Editar empleado
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/header.html' %}
+    <div class="grid-container">
+        <div class="grid-x">
+            <h1 class="cell">
+                Nuevo departamento
+            </h1>
+
+            <form class="cell callout grid-x grid-margin-x" method="post">
+                {% csrf_token %}
+                <div class="cell large-6">
+                    <label for=""> Nombres:
+                        {{ form.nombre }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label for=""> Apellidos:
+                        {{ form.apellido }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label for=""> Departamento:
+                        {{ form.departamento }}
+                    </label>
+                </div>
+                <div class="cell large-6">
+                    <label for=""> Nombre corto:
+                        {{ form.shorname }}
+                    </label>
+                </div>
+                <div class="cell">
+                    <button type="submit" class="button success">Actualizar</button>
+                </div>
+
+
+            </form>
+
+        </div>
+    </div>
+
+{% endblock %}
